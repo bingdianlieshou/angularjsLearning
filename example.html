@@ -8,6 +8,7 @@
 <script>
 	var myApp = angular.module("exampleApp", []);
 	var now = new Date();
+	var madan = "wo add";
 	myApp.controller("dayCtrl", function ($scope, days) {
 		$scope.day = days.today;
 		//$scope.day = "Monday";
@@ -24,8 +25,7 @@
 		}
 	});
 	myApp.filter("dayName", function () {
-		var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday",
-			"Thursday", "Friday", "Saturday"];
+		var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday"];
 		return function (input) {
 			return angular.isNumber(input) ? dayNames[input] : input;
 		};
