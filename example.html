@@ -8,7 +8,6 @@
 <script>
 	var myApp = angular.module("exampleApp", []);
 	var now = new Date();
-	myApp.value("nowValue", now);
 	myApp.controller("dayCtrl", function ($scope, days) {
 		$scope.day = days.today;
 		//$scope.day = "Monday";
@@ -31,8 +30,8 @@
 			return angular.isNumber(input) ? dayNames[input] : input;
 		};
 	});
-	myApp.service("days", function (nowValue) {
-		this.today = nowValue.getDay();
+	myApp.service("days", function () {
+		this.today = now.getDay();
 		this.tomorrow = this.today + 1;
 	});
 </script>
